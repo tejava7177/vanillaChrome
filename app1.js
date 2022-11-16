@@ -46,6 +46,9 @@ const player = {
     name: "nico",
     point: 10,
     fat: true,
+    sayHo: function (name) {
+        console.log("ho" + name + "nice meet you.");
+    },
 };
 
 console.log(player);
@@ -56,3 +59,23 @@ player.lastName = "shim";
 player.point += 14;
 
 console.log(player);
+
+
+function sayHello(nameOfPerson, age){
+    console.log("hello! my name is " + nameOfPerson + "He is " + age + " years old.");
+}
+
+sayHello("shim", 10);
+sayHello("juhuen", 23);
+sayHello("nico", 39);
+
+function plus(a, b){
+    console.log(a+b);
+}
+
+
+plus(10, 20);
+
+player.sayHo("lynn");
+
+
