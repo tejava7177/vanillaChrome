@@ -26,10 +26,10 @@ function onLoginSubmit(event){
     //const username = loginInput.value;
     // console.log(loginInput.value);
     loginForm.classList.add(HIDDEN_CLASSNAME);
-    
-    localStorage.setItem("USERNAME_KEY", loginInput.value);
+    const username = loginInput.value;
+    localStorage.setItem("USERNAME_KEY", username);
     //greeting.innerText = "hello " + username;
-    paintGreetings();
+    paintGreetings(username);
     //console.log("username");
 }
 
@@ -39,8 +39,7 @@ function handleLinkClick(event){
     alert("click");
 }
 
-function paintGreetings(){
-    const username = localStorage.getItem(USERNAME_KEY);
+function paintGreetings(username){
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
@@ -57,6 +56,6 @@ if(savedUsername === null){
     loginForm.addEventListener("submit", onLoginSubmit);
 } else{
     //show the greeting
-    paintGreetings();
+    paintGreetings(savedUsername);
     
 }
