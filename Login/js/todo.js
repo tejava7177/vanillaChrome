@@ -12,6 +12,8 @@ function deleteTodo(event){
     console.log(event.target.parentElement);
     const li = event.target.parentElement;
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function saveToDos(){
@@ -21,8 +23,9 @@ function saveToDos(){
 
 function paintTodo(newTodo){
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click", deleteTodo);
@@ -38,8 +41,12 @@ function handleToDoSubmit(event){
     //console.log(toDoInput.value);
     const newTodo = toDoInput.value;      //변수값을 저장한다.
     toDoInput.value = "";
-    toDos.push(newTodo);
-    paintTodo(newTodo);
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now(),
+    };
+    toDos.push(newTodoObj);
+    paintTodo(newTodoObj);
     saveToDos();
 }
 
@@ -50,8 +57,8 @@ console.log(savedToDos);
 
 if(savedToDos !== null){
     const paresedToDos = JSON.parse(savedToDos);
-    toDos = paresedToDos;
+    toDos = paresedToDos;                   //배열을 새로고고침 하지 않고 유지
     //paresedToDos.forEach((item) => console.log("this is the turn off", item));
-    paresedToDos.forEach(paintTodo);
+    paresedToDos.forEach(paintTodo);        //새로고침을 해도 리스트가 남아있음.
 }
 
