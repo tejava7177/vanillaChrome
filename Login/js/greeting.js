@@ -21,7 +21,7 @@ function btnClick() {
 }
 */
 
-function onLoginSubmit(event){
+function onLoginSubmit(event) {
     event.preventDefault();         //event가 원ㅐ 하는 행동을 멈춤
     //const username = loginInput.value;
     // console.log(loginInput.value);
@@ -33,13 +33,13 @@ function onLoginSubmit(event){
     //console.log("username");
 }
 
-function handleLinkClick(event){
+function handleLinkClick(event) {
     event.preventDefault();
     console.dir(event);
     alert("click");
 }
 
-function paintGreetings(username){
+function paintGreetings(username) {
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
@@ -50,12 +50,12 @@ function paintGreetings(username){
 
 const savedUsername = localStorage.getItem("USERNAME_KEY");
 
-if(savedUsername === null){
+if (savedUsername === null) {
     //show the form
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit", onLoginSubmit);
-} else{
+} else {
     //show the greeting
     paintGreetings(savedUsername);
-    
+
 }

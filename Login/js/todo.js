@@ -8,7 +8,7 @@ const TODOS_KEY = "todos";
 let toDos = [];
 
 
-function deleteTodo(event){
+function deleteTodo(event) {
     console.log(event.target.parentElement);
     const li = event.target.parentElement;
     li.remove();
@@ -16,12 +16,12 @@ function deleteTodo(event){
     saveToDos();
 }
 
-function saveToDos(){
+function saveToDos() {
     // localStorage.setItem("todos", toDos);
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
-function paintTodo(newTodo){
+function paintTodo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
@@ -36,7 +36,7 @@ function paintTodo(newTodo){
 }
 
 
-function handleToDoSubmit(event){
+function handleToDoSubmit(event) {
     event.preventDefault();
     //console.log(toDoInput.value);
     const newTodo = toDoInput.value;      //변수값을 저장한다.
@@ -55,7 +55,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 const savedToDos = localStorage.getItem(TODOS_KEY);
 console.log(savedToDos);
 
-if(savedToDos !== null){
+if (savedToDos !== null) {
     const paresedToDos = JSON.parse(savedToDos);
     toDos = paresedToDos;                   //배열을 새로고고침 하지 않고 유지
     //paresedToDos.forEach((item) => console.log("this is the turn off", item));

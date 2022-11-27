@@ -3,7 +3,7 @@
 const API_KEY = "d6c78c91e436886fcf786147dd39b2e4";
 
 
-function onGeoOk(position){
+function onGeoOk(position) {
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
     console.log("You live in", lat, lng);
@@ -18,7 +18,7 @@ function onGeoOk(position){
     });
 }
 
-function onGeoError(){
+function onGeoError() {
     alert("Can't find you, No weather for you.");
 }
 
