@@ -22,31 +22,29 @@ function btnClick() {
 */
 
 function onLoginSubmit(event) {
-    event.preventDefault();         //event가 원ㅐ 하는 행동을 멈춤
-    //const username = loginInput.value;
-    // console.log(loginInput.value);
+    event.preventDefault();         //event가 원하는 행동을 멈춤
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
     localStorage.setItem("USERNAME_KEY", username);
-    //greeting.innerText = "hello " + username;
     paintGreetings(username);
-    //console.log("username");
 }
 
 function handleLinkClick(event) {
+    //브라우저가 기본 동작을 실행하지 못하게 막기
     event.preventDefault();
     console.dir(event);
     alert("click");
 }
 
 function paintGreetings(username) {
+    // greeting.innerText = 'Hello' + username;
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-
 //link.addEventListener("click", handleLinkClick);
 //loginButton.addEventListener("click", btnClick);
+
 
 const savedUsername = localStorage.getItem("USERNAME_KEY");
 
@@ -57,5 +55,4 @@ if (savedUsername === null) {
 } else {
     //show the greeting
     paintGreetings(savedUsername);
-
 }

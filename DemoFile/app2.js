@@ -11,18 +11,10 @@
 // console.log(krAge);
 
 
+// const age = prompt("how?");
 
-
-
-// const age = prompt("how old are you? ");
-
-// parseInt(age);              //string > int
-
-// console.log(typeof age);
-// console.log(age);
-
-
-const age = parseInt(prompt("how old are you?"));
+const age = prompt("How old are you?");
+console.log(typeof age, typeof parseInt(age));
 
 if(isNaN(age)){
     console.log("Please write a number");

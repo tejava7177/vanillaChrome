@@ -42,10 +42,13 @@ daysOfWeek.push("holiday");
 console.log(daysOfWeek);
 
 
+
+//playger object
 const player = {
-    name: "nico",
+    name: "nico",    
     point: 10,
     fat: true,
+    //object 안에 함수를 넣는 방법
     sayHo: function (name) {
         console.log("ho" + name + "nice meet you.");
     },
@@ -54,6 +57,7 @@ const player = {
 console.log(player);
 console.log(player.name);
 
+//player object의 값 변환
 player.fat = false;
 player.lastName = "shim";
 player.point += 14;

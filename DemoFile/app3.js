@@ -1,10 +1,9 @@
 // const title = document.getElementById("title");
-
 // console.dir(title);
 
 // title.innerText = "Got you!";   //javascript를 통해 title을 변경하는 방법
 
-// console.log(title.id);
+console.log(title);
 // console.log(title.className);
 
 
